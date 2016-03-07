@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Find The Best Jobs in USA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="demo-ribbon"></div>
+<div class="container">
+	<script type='text/javascript'>
+
+	var getUrlParameter = function getUrlParameter(sParam) {
+	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+	        sURLVariables = sPageURL.split('&'),
+	        sParameterName,
+	        i;
+
+	    for (i = 0; i < sURLVariables.length; i++) {
+	        sParameterName = sURLVariables[i].split('=');
+
+	        if (sParameterName[0] === sParam) {
+	            return sParameterName[1] === undefined ? true : sParameterName[1];
+	        }
+	    }
+	};
+
+	function whatever(value){
+		getSearch = getUrlParameter('loc');
+		getBox = getUrlParameter('box');
+		getcategories = getUrlParameter('cat');
+		gethome = getUrlParameter('hom');
+		if(! getSearch){
+	   	locationc = 'Austin';
+		}else{
+			locationc = getSearch;
+		}
+		if(getBox){
+			$("#boxSearch").addClass("displayblock");
+		}
+		if(getcategories){
+			$("#categorylist").addClass("displayblock");
+		}
+		if(gethome){
+			$("#homebox").addClass("displayblock");
+			$(".cityname").html(locationc);
+			$(".imagesrc").attr('src','images/'+gethome+'.jpg');
+		}
+		ind_pub = '6499941817618209';
+		ind_el = 'indJobContent';
+		ind_pf = '';
+		ind_q = value;
+		ind_l = locationc;
+		ind_chnl = 'usa';
+		ind_n = 10;
+		ind_d = 'http://www.indeed.com';
+		ind_t = 40;
+		ind_c = 30;
+		ind_pgn = 1;
+		ind_pgnCnt = 0;
+		$.getScript("http://co.indeed.com/ads/jobroll-widget-v3.js", function(){});
+	}
+		$(function() {
+		    whatever('');
+		    $( "#categoireslist" ).change(function() {
+		 	 var listval = $( "#categoireslist option:selected" ).val();
+		 	 whatever(listval);
+			});
+		});
+	</script>
+	<div class="box-white" id="homebox">
+		<header>
+			<img src="images/ny.jpg" alt="" class="imagesrc">
+		</header>
+		<div class="content1">
+			<h1>Search for jobs in <span class="cityname"></span></h1>
+			<p>Find new job listings posted daily, use our job search tool to find a job in your local area.</p>
+		</div>
+		
+	</div>
+	<div class="box-white" id="boxSearch">
+		<input type="text" placeholder="Job title, keywords or company name" id="inputbuscar" ><button onclick="whatever(document.getElementById('inputbuscar').value)">Find Jobs</button>
+	</div>
+
+	<div class="box-white" id="categorylist">
+		<select name="" id="categoireslist">
+			<option value="">All Categories</option>
+			<option>Accounting</option>
+			<option>Administration</option>
+			<option>Automotive</option>
+			<option>Banking</option>
+			<option>Biotech</option>
+			<option>Broadcast</option>
+			<option>Business Development</option>
+			<option>Clerical</option>
+			<option>Construction</option>
+			<option>Consultant</option>
+			<option>Customer Service</option>
+			<option>Design</option>
+			<option>Distribution</option>
+			<option>Education</option>
+			<option>Engineering</option>
+			<option>Entry Level</option>
+			<option>Executive</option>
+			<option>Facilities</option>
+			<option>Finance</option>
+			<option>Food Service</option>
+			<option>Franchise</option>
+			<option>General Business</option>
+			<option>General Labor</option>
+			<option>Government</option>
+			<option>Grocery</option>
+			<option>Health Care</option>
+			<option>Hospitality</option>
+			<option>Hotel</option>
+			<option>Human Resources</option>
+			<option>Information Technology</option>
+			<option>Installation</option>
+			<option>Insurance</option>
+			<option>Inventory</option>
+			<option>Journalism</option>
+			<option>Legal</option>
+			<option>Legal Admin</option>
+			<option>Management</option>
+			<option>Manufacturing</option>
+			<option>Marketing</option>
+			<option>Media</option>
+			<option>New Grad</option>
+			<option>Nonprofit</option>
+			<option>Nurse</option>
+			<option>Newspaper</option>
+			<option>Other</option>
+			<option>Pharmaceutical</option>
+			<option>Planning</option>
+			<option>Professional Services</option>
+			<option>Procurement</option>
+			<option>Purchasing</option>
+			<option>Quality Control</option>
+			<option>Real Estate</option>
+			<option>Repair</option>
+			<option>Research</option>
+			<option>Restaurant</option>
+			<option>Retail</option>
+			<option>Sales</option>
+			<option>Science</option>
+			<option>Shipping</option>
+			<option>Skilled Labor</option>
+			<option>Social Services</option>
+			<option>Strategy</option>
+			<option>Supply Chain</option>
+			<option>Teaching</option>
+			<option>Telecommunications</option>
+			<option>Trades</option>
+			<option>Training</option>
+			<option>Transportation</option>
+			<option>Warehouse</option>
+		</select>
+	</div>
+
+	<div class="box-white">
+		<div id='indeed_widget_wrapper' style=''>
+		<div id='indJobContent' class=""></div>
+
+		<div id='indeed_search_wrapper'>
+		<script type='text/javascript'>
+		function clearDefaults() {
+		var formInputs = document.getElementById('indeed_jobform').elements;
+		for(var i = 0; i < formInputs.length; i++) {
+		if(formInputs[i].value == 'title, keywords' || formInputs[i].value == 'city, state, or zip') {
+		formInputs[i].value = '';
+		}
+		}
+		}
+		</script>
+		</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>
