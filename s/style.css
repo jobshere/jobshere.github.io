@@ -114,7 +114,7 @@ img{
 	font-size: 14px;
 }
 #pagination{
-	padding: 20px 0px 0px;
+	padding: 20px 0px 10px;
 }
 #pagination a{
 	display: inline-block;
