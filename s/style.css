@@ -174,4 +174,7 @@ img{
 	color: white;
 	padding: 10px;
 	}
+	#homebox img{
+	width: 100%;
+	}
 }
