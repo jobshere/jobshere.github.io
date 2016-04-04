@@ -175,7 +175,7 @@ img{
 	left: 0;
 	right: 0;
 	bottom: 0px;
-	animation: featuredanimation 4s ease-in-out infinite;
+	animation: featuredanimation 3s ease-in-out infinite;
 }
 #featured:before{
 	bottom: auto;
