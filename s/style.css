@@ -211,6 +211,9 @@ img{
 #featured .job:last-child{
 	border-bottom: 0px;
 }
+#featured .job.image{
+	text-align: center;
+}
 @media screen and (max-width: 780px){
 	#boxSearch input{
 	width: 100%;
