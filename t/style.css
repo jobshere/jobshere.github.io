@@ -76,7 +76,7 @@ input, select, button{
 h1{
 	margin-bottom: 20px;
     font-size: 24px;
-    line-height: 1.4;
+    line-height: 1.2;
     font-weight: bold;
     text-align: center;
 }
@@ -96,9 +96,6 @@ img{
 	margin: 0 auto;
 	max-width: 100%;
 	min-height: 300px;
-	/*margin-top: -180px;
-	padding-left: 10px;
-	padding-right: 10px;*/
 }
 .box-white{
 	background: white;
@@ -107,10 +104,11 @@ img{
 	margin-bottom: 20px;
 }
 .box{
-	width: 100%;
+	width: 49%;
+	display: inline-block;
 	text-align: center;
 	margin-bottom: 10px;
 }
 @media screen and (max-width: 780px){
-	
+
 }
