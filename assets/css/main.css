@@ -2750,6 +2750,12 @@
 	#text_thankyou{
 		display: none;
 	}
+	.displaynone{
+    display: none !important;
+	}
+	.displayblock{
+	    display: block !important;
+	}
 
 /* Header */
 
