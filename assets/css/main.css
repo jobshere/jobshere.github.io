@@ -2801,6 +2801,13 @@
 		}
 	}
 
+	.displaynone{
+    display: none !important;
+	}
+	.displayblock{
+	    display: block !important;
+	}
+
 	#header {
 		background: #444;
 		color: #bbb;
