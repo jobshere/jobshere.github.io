@@ -91,6 +91,7 @@ header{
 	padding: 10px 10px;
     line-height: 1.3;
 }
+.blue a{color: white !important; text-decoration: none !important;}
 ul li{
 	margin-bottom: 10px;
 	padding-left: 40px;
