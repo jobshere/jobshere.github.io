@@ -29,6 +29,10 @@ body {
 ol, ul {
 	list-style: none;
 }
+input, select, textarea{
+	border: 1px solid #a9a9a9;
+	box-shadow: none;
+}
 blockquote, q {
 	quotes: none;
 }
