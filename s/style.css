@@ -33,8 +33,10 @@ blockquote, q {
 	quotes: none;
 }
 input, select, textarea{
-	border: 1px solid #a9a9a9;
+	border: 1px solid #a9a9a9 !important;
 	box-shadow: none;
+	min-height: 32px;
+	border-radius: 0px !important;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
