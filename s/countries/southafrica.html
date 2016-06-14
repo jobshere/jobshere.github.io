@@ -59,6 +59,26 @@
 			// $(".cityname").html(locationc);
 			// $(".imagesrc").attr('src','images/'+gethome+'.jpg');
 		}
+
+		//REDIRECT
+		if(value != undefined && value2 != undefined){
+			var query1 = "";
+			var lcoation2 = "south africa";
+			if(value!=undefined){
+				query1 = value;
+			}
+			if(value2!=undefined){
+				if(value2 != ""){
+					lcoation2 = value2;
+				}
+				
+			}
+			var fullurl = "http://www.indeed.co.za/jobs?q="+query1+"&l="+lcoation2+"&indpubnum=6499941817618209";
+			window.location.href = fullurl;
+			$("#boxresults").addClass("loadingbox");
+		}
+		//END REDIRECT
+
 		ind_pub = '6499941817618209';
 		ind_el = 'indJobContent';
 		ind_pf = '';
@@ -92,12 +112,13 @@
 		
 	</div>
 	<div class="box-white" id="boxSearch">
+		<input type="text" placeholder="Job title, keywords or company name" id="inputbuscar" >
 		<input type="text" placeholder="City, State, Region or Zip Code" id="inputbuscar2" >
-		<input type="text" placeholder="Job title, keywords or company name" id="inputbuscar" ><button onclick="whatever((document.getElementById('inputbuscar').value), (document.getElementById('inputbuscar2').value))">Find Jobs</button>
+		<button onclick="whatever((document.getElementById('inputbuscar').value), (document.getElementById('inputbuscar2').value))">Find Jobs</button>
 	</div>
 
 	<div class="box-white" id="categorylist">
-		<input type="text" placeholder="City, State, Region or Zip Code" id="inputbuscar3" >
+		
 		<select name="" id="categoireslist">
 			<option value="">All Categories</option>
 			<option>Accounting</option>
@@ -170,6 +191,7 @@
 			<option>Transportation</option>
 			<option>Warehouse</option>
 		</select>
+		<input type="text" placeholder="City, State, Region or Zip Code" id="inputbuscar3" >
 		<button onclick="whatever((document.getElementById('categoireslist').value), (document.getElementById('inputbuscar3').value))">Find Jobs</button>
 	</div>
 
@@ -181,7 +203,7 @@
 		</div>		
 	</div> -->
 
-	<div class="box-white">
+	<div class="box-white" id="boxresults">
 		<div id='indeed_widget_wrapper' style=''>
 		<div id='indJobContent' class=""></div>
 

@@ -33,18 +33,21 @@ iframe{
 	border: 0px;
 	min-height: 1200px;
 	width: 100%;
-	background: white url("ring.gif") no-repeat top 70px center;
+	/*background: white url("ring.gif") no-repeat top 70px center;*/
 }
-#iframebox{
-	padding: 0px;
-	/*min-height: 1200px;*/
+#boxresults{
+	position: relative;
 	overflow: hidden;
-	margin-left: -10px;
-    margin-right: -10px;
-
 }
-#iframebox iframe{
-	/*margin-top: -125px;*/
+.loadingbox:after{
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: rgba(255,255,255,0.8) url("ring.gif") no-repeat top 50px center;
 }
 body {
 	line-height: 1;
