@@ -23,17 +23,31 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
 input, select, textarea{
 	border: 1px solid #a9a9a9 !important;
 	box-shadow: none;
 	min-height: 32px;
 	border-radius: 0px !important;
+}
+iframe{
+	border: 0px;
+	min-height: 1200px;
+	background: url("ring.gif") ;
+}
+#iframebox{
+	padding: 0px;
+	/*min-height: 1200px;*/
+	overflow: hidden;
+
+}
+#iframebox iframe{
+	margin-top: -125px;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
 }
 blockquote, q {
 	quotes: none;
