@@ -32,16 +32,19 @@ input, select, textarea{
 iframe{
 	border: 0px;
 	min-height: 1200px;
-	background: url("ring.gif") ;
+	width: 100%;
+	background: white url("ring.gif") no-repeat top 70px center;
 }
 #iframebox{
 	padding: 0px;
 	/*min-height: 1200px;*/
 	overflow: hidden;
+	margin-left: -10px;
+    margin-right: -10px;
 
 }
 #iframebox iframe{
-	margin-top: -125px;
+	/*margin-top: -125px;*/
 }
 body {
 	line-height: 1;

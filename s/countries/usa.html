@@ -60,6 +60,24 @@
 			// $(".cityname").html(locationc);
 			// $(".imagesrc").attr('src','images/'+gethome+'.jpg');
 		}
+		if(value != undefined || value2 != undefined){
+			var query1 = "";
+			var lcoation2 = "usa";
+			if(value!=undefined){
+				query1 = value;
+			}
+			if(value2!=undefined){
+				if(value2 != ""){
+					lcoation2 = value2;
+					alert(value2);
+				}
+				
+			}
+			var fullurl = "http://www.indeed.com/jobs?q="+query1+"&l="+lcoation2+"&indpubnum=6499941817618209";
+			alert(fullurl);
+			// http://www.indeed.com/jobs?q=admin&l=usa&indpubnum=6499941817618209
+			window.frames["myFrame"].location = fullurl;
+		}
 		// ind_pub = '6499941817618209';
 		// ind_el = 'indJobContent';
 		// ind_pf = '';
@@ -182,7 +200,6 @@
 			<p>We've made it easy for you to be heard and get hired. Search thousands of openings near you.</p>
 		</div>		
 	</div> -->
-
 	<div class="box-white" id="iframebox">
 		<!-- <div id='indeed_widget_wrapper' style=''>
 		<div id='indJobContent' class=""></div>
@@ -200,7 +217,7 @@
 		</script>
 		</div>
 		</div> -->
-		 <iframe  name="myFrame" href='http://www.indeed.com/jobs?l=usa&indpubnum=6499941817618209'></iframe>
+		 <iframe  name="myFrame" href='http://www.indeed.com/jobs?l=usa&indpubnum=6499941817618209' id="miframe"></iframe>
        
      	 <script type="text/javascript">window.frames["myFrame"].location = "http://www.indeed.com/jobs?l=usa&indpubnum=6499941817618209"</script>
 	</div>
@@ -214,6 +231,16 @@
 	</div> -->
 
 </div>
+<script type='text/javascript'>
+	$('myFrame').attr('scrolling','no').css({'overflow':'hidden'});
+
+$(window).scroll(function(){
+    var st = $(this).scrollTop();
+    if(st + $(window).height() == $(document).height()){
+       $('myFrame').attr('scrolling','yes').css({'overflow':'auto'});   
+    }
+});
+</script>
 </body>
 </html>
 
