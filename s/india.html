@@ -55,10 +55,27 @@
 			$(".cityname").html(locationc);
 			$(".imagesrc").attr('src','images/'+gethome+'.jpg');
 		}
+
+		//REDIRECT
+		if(value != undefined){
+			var query1 = value;
+			var fullurl = "http://www.indeed.co.in/jobs?q="+query1+"&l="+locationc+"&indpubnum=6499941817618209&chnl=India";
+			window.location.href = fullurl;
+			$("#boxresults").addClass("loadingbox");
+		}
+		//END REDIRECT
+
+
+
+		var queryloc = value;
+		if(value == undefined){
+			queryloc = "";
+		}
+
 		ind_pub = '6499941817618209';
 		ind_el = 'indJobContent';
 		ind_pf = '';
-		ind_q = value;
+		ind_q = queryloc;
 		ind_l = locationc;
 		ind_chnl = 'India';
 		ind_n = 10;
@@ -70,7 +87,7 @@
 		$.getScript("http://www.indeed.co.in/ads/jobroll-widget-v3.js", function(){});
 	}
 		$(function() {
-		    whatever('');
+		    whatever();
 		    $( "#categoireslist" ).change(function() {
 		 	 var listval = $( "#categoireslist option:selected" ).val();
 		 	 whatever(listval);
@@ -166,7 +183,7 @@
 		</select>
 	</div>
 
-	<div class="box-white">
+	<div class="box-white" id="boxresults">
 		<div id='indeed_widget_wrapper' style=''>
 		<div id='indJobContent' class=""></div>
 
