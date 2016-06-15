@@ -7,10 +7,8 @@
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-75243375-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 	
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,22 +22,18 @@
 <div class="demo-ribbon"></div>
 <div class="container">
 	<script type='text/javascript'>
-
 	var getUrlParameter = function getUrlParameter(sParam) {
 	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
 	        sURLVariables = sPageURL.split('&'),
 	        sParameterName,
 	        i;
-
 	    for (i = 0; i < sURLVariables.length; i++) {
 	        sParameterName = sURLVariables[i].split('=');
-
 	        if (sParameterName[0] === sParam) {
 	            return sParameterName[1] === undefined ? true : sParameterName[1];
 	        }
 	    }
 	};
-
 	function whatever(value){
 		getSearch = getUrlParameter('loc');
 		getBox = getUrlParameter('box');
@@ -61,11 +55,29 @@
 			$(".cityname").html(locationc);
 			$(".imagesrc").attr('src','images/'+gethome+'.jpg');
 		}
+
+
+		//REDIRECT
+		if(value != undefined){
+			var query1 = value;
+			var fullurl = "http://www.indeed.com/jobs?q="+query1+"&l="+locationc+"&indpubnum=6499941817618209&chnl=usa";
+			window.location.href = fullurl;
+			$("#boxresults").addClass("loadingbox");
+		}
+		//END REDIRECT
+
+
+
+		var queryloc = value;
+		if(value == undefined){
+			queryloc = "";
+		}
+
 		$(".cityname2").html(locationc);
 		ind_pub = '6499941817618209';
 		ind_el = 'indJobContent';
 		ind_pf = '';
-		ind_q = value;
+		ind_q = queryloc;
 		ind_l = locationc;
 		ind_chnl = 'usa';
 		ind_n = 10;
@@ -77,7 +89,7 @@
 		$.getScript("http://co.indeed.com/ads/jobroll-widget-v3.js", function(){});
 	}
 		$(function() {
-		    whatever('');
+		    whatever();
 		    $( "#categoireslist" ).change(function() {
 		 	 var listval = $( "#categoireslist option:selected" ).val();
 		 	 whatever(listval);
@@ -181,7 +193,7 @@
 	<!--	</div>-->
 	<!--</div> -->
 
-	<div class="box-white">
+	<div class="box-white" id="boxresults">
 		
 		<div id='indeed_widget_wrapper' style=''>
 		<div id='indJobContent' class=""></div>
