@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>Offerte di Lavoro Italia</title>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-75243375-1', 'auto');
+  ga('send', 'pageview');
+</script>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="demo-ribbon"></div>
+<div class="container">
+	<script type='text/javascript'>
+	var getUrlParameter = function getUrlParameter(sParam) {
+	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+	        sURLVariables = sPageURL.split('&'),
+	        sParameterName,
+	        i;
+	    for (i = 0; i < sURLVariables.length; i++) {
+	        sParameterName = sURLVariables[i].split('=');
+	        if (sParameterName[0] === sParam) {
+	            return sParameterName[1] === undefined ? true : sParameterName[1];
+	        }
+	    }
+	};
+	function whatever(value){
+		getSearch = getUrlParameter('loc');
+		getBox = getUrlParameter('box');
+		getcategories = getUrlParameter('cat');
+		gethome = getUrlParameter('hom');
+		if(! getSearch){
+	   	locationc = 'Italia';
+		}else{
+			locationc = getSearch;
+		}
+		if(getBox){
+			$("#boxSearch").addClass("displayblock");
+		}
+		if(getcategories){
+			$("#categorylist").addClass("displayblock");
+		}
+		if(gethome){
+			$("#homebox").addClass("displayblock");
+			$(".cityname").html(locationc);
+			$(".imagesrc").attr('src','images_it/'+gethome+'.jpg');
+		}
+
+		//REDIRECT
+		if(value != undefined){
+			var query1 = value;
+			var fullurl = "http://it.indeed.com/jobs?q="+query1+"&l="+locationc+"&indpubnum=6499941817618209&chnl=italy";
+			window.location.href = fullurl;
+			$("#boxresults").addClass("loadingbox");
+		}
+		//END REDIRECT
+
+
+
+		var queryloc = value;
+		if(value == undefined){
+			queryloc = "";
+		}
+
+		ind_pub = '6499941817618209';
+		ind_el = 'indJobContent';
+		ind_pf = '';
+		ind_q = queryloc;
+		ind_l = locationc;
+		ind_chnl = 'italy';
+		ind_n = 10;
+		ind_d = 'http://it.indeed.com';
+		ind_t = 40;
+		ind_c = 30;
+		ind_pgn = 1;
+		ind_pgnCnt = 0;
+		$.getScript("http://it.indeed.com/ads/jobroll-widget-v3.js", function(){});
+	}
+		$(function() {
+		    whatever();
+		    $( "#categoireslist" ).change(function() {
+		 	 var listval = $( "#categoireslist option:selected" ).val();
+		 	 whatever(listval);
+			});
+		});
+	</script>
+	<div class="box-white" id="homebox">
+		<header>
+			<img src="images/ny.jpg" alt="" class="imagesrc">
+		</header>
+		<div class="content1">
+			<h1>Cerca lavori a <span class="cityname"></span></h1>
+			<p>Trova nuove offerte di lavoro pubblicate ogni giorno, utilizza il nostro strumento di ricerca lavoro per trovare un lavoro nella tua zona.</p>
+		</div>
+		
+	</div>
+	<div class="box-white" id="boxSearch">
+		<input type="text" placeholder="Professione, Parole Chiave" id="inputbuscar" ><button onclick="whatever(document.getElementById('inputbuscar').value)">Trovare Lavoro</button>
+	</div>
+
+	<div class="box-white" id="categorylist">
+		<select name="" id="categoireslist">
+			<option value="">Tutte le categorie</option>
+			<option>Acquisto</option>
+			<option>Al dettaglio</option>
+			<option>Altro</option>
+			<option>Amministrazione</option>
+			<option>Approvvigionamento</option>
+			<option>Assicurazione</option>
+			<option>Assistenza Sanitaria</option>
+			<option>Assistenza clienti</option>
+			<option>Automotive</option>
+			<option>Bancario</option>
+			<option>Business Development</option>
+			<option>Clericale</option>
+			<option>Commercio</option>
+			<option>Consulente</option>
+			<option>Contabilità</option>
+			<option>Controllo di qualità</option>
+			<option>Costruzione</option>
+			<option>Design</option>
+			<option>Distribuzione</option>
+			<option>Drogheria</option>
+			<option>Educazione</option>
+			<option>Esecutivo</option>
+			<option>Farmaceutico</option>
+			<option>Finanza</option>
+			<option>Formazione</option>
+			<option>Franchigia</option>
+			<option>Gestione</option>
+			<option>Giornale</option>
+			<option>Giornalismo</option>
+			<option>Governo</option>
+			<option>Hotel</option>
+			<option>Immobiliare</option>
+			<option>Infermiera</option>
+			<option>Ingegneria</option>
+			<option>Insegnamento</option>
+			<option>Installazione</option>
+			<option>Inventario</option>
+			<option>Lavoro Generale</option>
+			<option>Legale</option>
+			<option>Magazzino</option>
+			<option>Manodopera</option>
+			<option>Marketing</option>
+			<option>Media</option>
+			<option>Non Profit</option>
+			<option>Ospitalità</option>
+			<option>Pianificazione</option>
+			<option>Produzione</option>
+			<option>Ricerca</option>
+			<option>Riparazione</option>
+			<option>Risorse umane</option>
+			<option>Ristorante</option>
+			<option>Scienza</option>
+			<option>Servizi</option>
+			<option>Servizi professionali</option>
+			<option>Servizi sociali</option>
+			<option>Servizio di ristorazione</option>
+			<option>Spedizione</option>
+			<option>Strategia</option>
+			<option>Tecnologia dell'informazione</option>
+			<option>Telecomunicazioni</option>
+			<option>Trasmissione</option>
+			<option>Trasporti</option>
+			<option>Vendite</option>
+		</select>
+	</div>
+
+	<div class="box-white" id="boxresults">
+		<div id='indeed_widget_wrapper' style=''>
+		<div id='indJobContent' class=""></div>
+
+		<div id='indeed_search_wrapper'>
+		<script type='text/javascript'>
+		function clearDefaults() {
+		var formInputs = document.getElementById('indeed_jobform').elements;
+		for(var i = 0; i < formInputs.length; i++) {
+		if(formInputs[i].value == 'titolo dellofferta, parole chiave' || formInputs[i].value == 'città, regione o CAP') {
+		formInputs[i].value = '';
+		}
+		}
+		}
+		</script>
+		</div>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>
