@@ -55,7 +55,12 @@
 			$("#categorylist").addClass("displayblock");
 		}
 		if(gethome){
-			$("#homebox").addClass("displayblock");
+			$("#homebox, #loading").addClass("displayblock");
+			setTimeout(
+			  function() 
+			  {
+			  $("#loading").attr("style","display: none !important");
+			  }, 1800);
 			// $(".cityname").html(locationc);
 			// $(".imagesrc").attr('src','images/'+gethome+'.jpg');
 		}
@@ -101,6 +106,9 @@
 			// });
 		});
 	</script>
+	<div id="loading" class="box-white">
+			Loading...
+	</div>
 	<div class="box-white" id="homebox">
 		<header>
 			<img src="images/uk.jpg" alt="" class="imagesrc">
