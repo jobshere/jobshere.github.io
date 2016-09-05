@@ -52,6 +52,11 @@
 		}
 		if(gethome){
 			$("#homebox").addClass("displayblock");
+			setTimeout(
+			  function() 
+			  {
+			  $("#loading").attr("style","display: none !important");
+			  }, 1000);
 			$(".cityname").html(locationc);
 			$(".imagesrc").attr('src','images_col/'+gethome+'.jpg');
 		}
@@ -94,6 +99,10 @@
 			});
 		});
 	</script>
+	
+	<div id="loading" class="box-white">
+			Loading...
+	</div>
 	<div class="box-white" id="homebox">
 		<header>
 			<img src="images/ny.jpg" alt="" class="imagesrc">
