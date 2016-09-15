@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Поиск вакансий в Россия</title>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-75243375-1', 'auto');
+  ga('send', 'pageview');
+</script>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="demo-ribbon"></div>
+<div class="container">
+	<script type='text/javascript'>
+	var getUrlParameter = function getUrlParameter(sParam) {
+	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+	        sURLVariables = sPageURL.split('&'),
+	        sParameterName,
+	        i;
+	    for (i = 0; i < sURLVariables.length; i++) {
+	        sParameterName = sURLVariables[i].split('=');
+	        if (sParameterName[0] === sParam) {
+	            return sParameterName[1] === undefined ? true : sParameterName[1];
+	        }
+	    }
+	};
+	function whatever(value, value2){
+		getSearch = getUrlParameter('loc');
+		getBox = getUrlParameter('box');
+		getcategories = getUrlParameter('cat');
+		gethome = getUrlParameter('hom');
+		if(! getSearch){
+			if(value2 == undefined){
+				locationc = '';
+			}else{
+				locationc = value2;
+			}
+		}else{
+			locationc = getSearch;
+		}
+		if(getBox){
+			$("#boxSearch").addClass("displayblock");
+		}
+		if(getcategories){
+			$("#categorylist").addClass("displayblock");
+		}
+		if(gethome){
+			$("#homebox, #loading").addClass("displayblock");
+			setTimeout(
+			  function() 
+			  {
+			  $("#loading").attr("style","display: none !important");
+			  }, 1000);
+			// $(".cityname").html(locationc);
+			// $(".imagesrc").attr('src','images/'+gethome+'.jpg');
+		}
+		//REDIRECT
+		if(value != undefined && value2 != undefined){
+			var query1 = "";
+			var lcoation2 = "Россия";
+			if(value!=undefined){
+				query1 = value;
+			}
+			if(value2!=undefined){
+				if(value2 != ""){
+					lcoation2 = value2;
+				}
+				
+			}
+			var fullurl = "http://ru.indeed.com/jobs?q="+query1+"&l="+lcoation2+"&indpubnum=6499941817618209";
+			window.location.href = fullurl;
+			$("#boxresults").addClass("loadingbox");
+		}
+		//END REDIRECT
+		ind_pub = '6499941817618209';
+		ind_el = 'indJobContent';
+		ind_pf = '';
+		ind_q = value;
+		ind_l = locationc;
+		ind_chnl = 'russia';
+		ind_n = 10;
+		ind_d = 'http://ru.indeed.com';
+		ind_t = 40;
+		ind_c = 30;
+		ind_pgn = 1;
+		ind_pgnCnt = 0;
+		$.getScript("http://ru.indeed.com/ads/jobroll-widget-v3.js", function(){});
+	}
+		$(function() {
+		    whatever('');
+		 //    $( "#categoireslist" ).change(function() {
+		 // 	 var listval = $( "#categoireslist option:selected" ).val();
+		 // 	 whatever(listval);
+			// });
+		});
+	</script>
+	<div id="loading" class="box-white">
+			Loading...
+	</div>
+	<div class="box-white" id="homebox">
+		<header>
+			<img src="images/russia.jpg" alt="" class="imagesrc">
+		</header>
+		<div class="content1">
+			<h1>Поиск вакансий в Россия</h1>
+			<p>Находите новые вакансии ежедневно, используйте нашу поисковую систему, чтобы найти лучшие вакансии в вашем регионе.</p>
+		</div>
+		
+	</div>
+	<div class="box-white" id="boxSearch">
+		<input type="text" placeholder="название, ключевые слова" id="inputbuscar" >
+		<input type="text" placeholder="город, область или почтовый индекс" id="inputbuscar2" >
+		<button onclick="whatever((document.getElementById('inputbuscar').value), (document.getElementById('inputbuscar2').value))">Найти вакансии
+</button>
+	</div>
+
+	<div class="box-white" id="categorylist">
+		
+		<select name="" id="categoireslist">
+			<option value="">Все категории</option>
+			<option>бухгалтерский учет</option>
+			<option>администрация</option>
+			<option>автомобильный</option>
+			<option>Банковское дело</option>
+			<option>радиовещание</option>
+			<option>Бизнес</option>
+			<option>клерикальный</option>
+			<option>строительство</option>
+			<option>консультант</option>
+			<option>Обслуживание клиентов</option>
+			<option>дизайн</option>
+			<option>распределение</option>
+			<option>образование</option>
+			<option>инженерия</option>
+			<option>Начальный уровень</option>
+			<option>Должностное лицо</option>
+			<option>сооружения</option>
+			<option>финансов</option>
+			<option>франшиза</option>
+			<option>Общий бизнес</option>
+			<option>Общие труда</option>
+			<option>Правительство</option>
+			<option>бакалея</option>
+			<option>Здравоохранение</option>
+			<option>гостеприимство</option>
+			<option>Гостиница</option>
+			<option>Отдел кадров</option>
+			<option>Информационные технологии</option>
+			<option>Монтаж</option>
+			<option>страхование</option>
+			<option>инвентарь</option>
+			<option>журналистика</option>
+			<option>легальный</option>
+			<option>Юридический Администратор</option>
+			<option>управление</option>
+			<option>производство</option>
+			<option>маркетинг</option>
+			<option>СМИ</option>
+			<option>Новый Град</option>
+			<option>Некоммерческая</option>
+			<option>Медсестра</option>
+			<option>Газета</option>
+			<option>Другие</option>
+			<option>фармацевтическая</option>
+			<option>планирование</option>
+			<option>Профессиональные услуги</option>
+			<option>Закупка</option>
+			<option>покупка</option>
+			<option>Контроль качества</option>
+			<option>Недвижимость</option>
+			<option>ремонт</option>
+			<option>Исследование</option>
+			<option>Ресторан</option>
+			<option>Розничная торговля</option>
+			<option>Продажи</option>
+			<option>Наука</option>
+			<option>Перевозка</option>
+			<option>Квалифицированный труд</option>
+			<option>Социальные службы</option>
+			<option>стратегия</option>
+			<option>Цепочка поставок</option>
+			<option>учение</option>
+			<option>связь</option>
+			<option>аукцион</option>
+			<option>Обучение</option>
+			<option>Транспорт</option>
+			<option>Склад</option>
+		</select>
+		<input type="text" placeholder="город, область или почтовый индекс" id="inputbuscar3" >
+		<button onclick="whatever((document.getElementById('categoireslist').value), (document.getElementById('inputbuscar3').value))">Найти вакансии
+</button>
+	</div>
+
+
+
+	<div class="box-white" id="boxresults">
+		<div id='indeed_widget_wrapper' style=''>
+		<div id='indJobContent' class=""></div>
+
+		<div id='indeed_search_wrapper'>
+		<script type='text/javascript'>
+		function clearDefaults() {
+		var formInputs = document.getElementById('indeed_jobform').elements;
+		for(var i = 0; i < formInputs.length; i++) {
+		if(formInputs[i].value == 'название, ключевые слова' || formInputs[i].value == 'город, область или почтовый индекс') {
+		formInputs[i].value = '';
+		}
+		}
+		}
+		</script>
+		</div>
+		</div>
+	</div>
+
+
+</div>
+</body>
+</html>
